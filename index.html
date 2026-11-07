@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparativa IA para Shorts y Redes Sociales</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --native-tag: #8b5cf6;
+      --assisted-tag: #06b6d4;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 24px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .table-wrapper {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    thead {
+      background-color: #0b1329;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr.main-row {
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    tbody tr.main-row:hover {
+      background-color: #27354f;
+    }
+
+    /* Estilo del enlace web */
+    .tool-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.15s ease;
+    }
+
+    .tool-link:hover {
+      text-decoration: underline;
+      color: #7dd3fc;
+    }
+
+    .external-icon {
+      font-size: 0.75rem;
+      opacity: 0.8;
+      margin-left: 2px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .badge-native {
+      background-color: rgba(139, 92, 246, 0.2);
+      color: #c4b5fd;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+    }
+
+    .badge-assisted {
+      background-color: rgba(6, 182, 212, 0.2);
+      color: #67e8f9;
+      border: 1px solid rgba(6, 182, 212, 0.4);
+    }
+
+    .stars {
+      color: #facc15;
+      font-weight: bold;
+    }
+
+    .desc-row {
+      display: none;
+      background-color: #162032;
+    }
+
+    .desc-row td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .desc-content {
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+
+    .desc-content strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .click-hint {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-left: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Herramientas de Vídeo con IA para Shorts y Redes</h1>
+    <p class="subtitle">Pulsa en el <strong>nombre (azul)</strong> para ir a su web oficial, o <strong>en la fila</strong> para desplegar la descripción.</p>
+  </header>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Herramienta</th>
+          <th>Tipo</th>
+          <th>Precio</th>
+          <th>Facilidad</th>
+          <th>Popularidad</th>
+          <th>Idoneidad Shorts</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Rellenado con Javascript -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+const tools = [
+  {
+    name: "CapCut",
+    url: "https://www.capcut.com/",
+    type: "Asistida",
+    price: "Gratis / Económico ($)",
+    ease: "Muy Alta",
+    popularity: "Líder masivo",
+    rating: "5.0 ★★★★★",
+    desc: "El editor de referencia absoluta para TikTok y Shorts. Empezó como software de montaje clásico y hoy lidera en IA con autotranscripción dinámica con estilos virales, borrado de fondos instantáneo, voces sintéticas y plantillas automáticas."
+  },
+  {
+    name: "Opus Clip",
+    url: "https://www.opus.pro/",
+    type: "Nativa IA",
+    price: "Freemium ($$)",
+    ease: "Muy Alta (1 clic)",
+    popularity: "Muy Alta",
+    rating: "5.0 ★★★★★",
+    desc: "Especializada en 'repurposing'. Le pegas el enlace de un vídeo largo (YouTube, podcast) y la IA detecta los ganchos virales, encuadra verticalmente al hablante, añade subtítulos animados y asigna un puntaje de viralidad estimado."
+  },
+  {
+    name: "Submagic",
+    url: "https://www.submagic.co/",
+    type: "Nativa IA",
+    price: "Medio ($$)",
+    ease: "Muy Alta",
+    popularity: "Alta",
+    rating: "4.8 ★★★★★",
+    desc: "Plataforma nativa para creadores de formato vertical corto. Transforma un vídeo hablado plano en una pieza dinámica: subtítulos estilo Alex Hormozi con emojis automáticos, inserción de B-roll, efectos de sonido y zooms automáticos."
+  },
+  {
+    name: "InVideo AI",
+    url: "https://invideo.io/",
+    type: "Nativa IA",
+    price: "Medio ($$)",
+    ease: "Alta",
+    popularity: "Alta",
+    rating: "4.5 ★★★★☆",
+    desc: "Generación completa mediante prompt (text-to-video). Escribes una idea ('3 datos curiosos de la Roma antigua en tono épico') y la herramienta escribe el guion, produce la voz en off, selecciona vídeos de stock y compone el Short terminado."
+  },
+  {
+    name: "HeyGen",
+    url: "https://www.heygen.com/",
+    type: "Nativa IA",
+    price: "Medio-Alto ($$$)",
+    ease: "Alta",
+    popularity: "Muy Alta",
+    rating: "4.4 ★★★★☆",
+    desc: "La reina de los avatares virtuales hiperrealistas y traducción por IA. Permite crear Shorts educativos o de noticias sin poner tu cara física, o traducir tus propios vídeos a decenas de idiomas adaptando el movimiento de tus labios (lip-sync)."
+  },
+  {
+    name: "Kling AI",
+    url: "https://klingai.com/",
+    type: "Nativa IA",
+    price: "Freemium / Medio ($$)",
+    ease: "Media",
+    popularity: "Muy Alta (Top)",
+    rating: "4.3 ★★★★☆",
+    desc: "Modelo generativo de vídeo cinemático (desarrollado por Kuaishou). Sobresale por su física hiperrealista y control de movimiento. Es una fuente inmejorable para crear planos de recurso (B-roll) llamativos para tus Shorts."
+  },
+  {
+    name: "Doitong",
+    url: "https://doitong.com/",
+    type: "Nativa IA",
+    price: "Freemium ($$)",
+    ease: "Alta",
+    popularity: "Emergente",
+    rating: "4.2 ★★★★☆",
+    desc: "Plataforma emergente centrada directamente en automatizar historias y clips verticales para TikTok/Shorts. Integra generador de historias, consistencia en personajes y animación rápida de escenas con voz integrada."
+  },
+  {
+    name: "Runway (Gen-3)",
+    url: "https://runwayml.com/",
+    type: "Nativa IA",
+    price: "Medio-Alto ($$$)",
+    ease: "Media",
+    popularity: "Muy Alta",
+    rating: "4.1 ★★★★☆",
+    desc: "Pionera indiscutible en generación de vídeo fotorrealista a partir de texto o imágenes fijas. Ideal para canales sin rostro ('faceless') que necesitan escenas cinematográficas personalizadas que no existen en librerías de stock."
+  },
+  {
+    name: "Pika (Pika Labs)",
+    url: "https://pika.art/",
+    type: "Nativa IA",
+    price: "Freemium / Económico ($$)",
+    ease: "Alta",
+    popularity: "Alta",
+    rating: "4.0 ★★★★☆",
+    desc: "Generador de vídeo ágil muy popular por sus efectos virales (derretir, inflar o aplastar objetos) y animación rápida de imágenes. Ideal para crear mini-escenas creativas o ganchos visuales en los primeros 3 segundos del Short."
+  },
+  {
+    name: "Descript",
+    url: "https://www.descript.com/",
+    type: "Asistida",
+    price: "Económico ($$)",
+    ease: "Media-Alta",
+    popularity: "Alta",
+    rating: "4.1 ★★★★☆",
+    desc: "Editor de vídeo que funciona como un procesador de texto: editas el vídeo borrando palabras de la transcripción. Su IA elimina muletillas ('ehhh'), mejora la voz a calidad de estudio y corrige el contacto visual si leías el guion."
+  },
+  {
+    name: "Canva",
+    url: "https://www.canva.com/",
+    type: "Asistida",
+    price: "Económico ($)",
+    ease: "Muy Alta",
+    popularity: "Líder masivo",
+    rating: "3.9 ★★★★☆",
+    desc: "Suite de diseño clásica que añadió Magic Studio. Muy útil para plantillas rápidas de Shorts, subtitulado automático básico y su función Beat Sync (sincroniza tus clips de vídeo al ritmo de la música elegida)."
+  },
+  {
+    name: "Magnific AI",
+    url: "https://magnific.ai/",
+    type: "Nativa IA",
+    price: "Alto ($$$$)",
+    ease: "Media",
+    popularity: "Alta",
+    rating: "3.8 ★★★★☆",
+    desc: "Suite de ultra-calidad visual integrada en Freepik. Destaca en generación cinemática, reiluminación ('relighting') y escalado/mejora extrema de resolución en vídeo. Requiere montaje posterior en otro editor para añadir subtítulos y ritmo vertical."
+  }
+];
+
+const tbody = document.getElementById("table-body");
+
+tools.forEach((tool, index) => {
+  const tr = document.createElement("tr");
+  tr.className = "main-row";
+  tr.setAttribute("onclick", `toggleDesc(${index})`);
+
+  const tagClass = tool.type === "Nativa IA" ? "badge-native" : "badge-assisted";
+
+  tr.innerHTML = `
+    <td>
+      <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="tool-link" onclick="event.stopPropagation()">
+        ${tool.name} <span class="external-icon">↗</span>
+      </a>
+      <span class="click-hint">▾</span>
+    </td>
+    <td><span class="badge ${tagClass}">${tool.type}</span></td>
+    <td>${tool.price}</td>
+    <td>${tool.ease}</td>
+    <td>${tool.popularity}</td>
+    <td class="stars">${tool.rating}</td>
+  `;
+
+  const trDesc = document.createElement("tr");
+  trDesc.id = `desc-${index}`;
+  trDesc.className = "desc-row";
+  trDesc.innerHTML = `
+    <td colspan="6">
+      <div class="desc-content">
+        <strong>¿Qué es y para qué sirve ${tool.name}?</strong>
+        ${tool.desc}
+      </div>
+    </td>
+  `;
+
+  tbody.appendChild(tr);
+  tbody.appendChild(trDesc);
+});
+
+function toggleDesc(index) {
+  const row = document.getElementById(`desc-${index}`);
+  const isVisible = row.style.display === "table-row";
+  
+  document.querySelectorAll(".desc-row").forEach(r => r.style.display = "none");
+  row.style.display = isVisible ? "none" : "table-row";
+}
+</script>
+
+</body>
+</html>
